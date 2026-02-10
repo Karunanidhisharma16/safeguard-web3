@@ -16,242 +16,252 @@
   A smart security layer that analyzes Ethereum transactions in real-time, detecting unlimited token approvals, NFT scams, and malicious contracts before they drain your wallet.
 </p>
 
-The Problem
+---
 
-3.8 billion dollars lost to crypto scams in 2022
+## 🎥 **Demo**
 
-Most users do not understand what they are signing
 
-Wallets show raw hex data instead of meaningful warnings
 
-Unlimited token approvals are the most common attack vector
+**Live Demo:** [safeguard-web3.vercel.app](#) *(Add your deployment link)*
 
-Once a malicious transaction is signed, it cannot be reversed.
+---
 
-The Solution
+## 🚨 **The Problem**
 
-SafeGuard intercepts transactions before they are signed and provides:
+- **$3.8 Billion** lost to crypto scams in 2022 alone
+- **95%** of users don't understand what they're signing
+- Wallets show raw hex data instead of human-readable warnings
+- **Unlimited token approvals** are the #1 attack vector
 
-Real-time risk analysis for approvals, NFTs, and suspicious contracts
+**Once you sign a malicious transaction, it's irreversible.**
 
-Human-readable explanations instead of technical jargon
+---
 
-Rule-based deterministic safety scoring from 0 to 100
+## ✨ **The Solution**
 
-Contract verification using Etherscan
+SafeGuard intercepts transactions **before** you sign them and provides:
 
-Transaction simulation before execution
+✅ **Real-time Risk Analysis** - Detects unlimited approvals, NFT scams, and suspicious contracts  
+✅ **Human-Readable Explanations** - Clear warnings instead of technical jargon  
+✅ **Deterministic Scoring** - Rule-based safety scores (0-100)  
+✅ **Contract Verification** - Checks Etherscan for verified source code  
+✅ **Transaction Simulation** - Predicts outcomes before execution  
+✅ **Educational Warnings** - Teaches users WHY transactions are risky
 
-Educational warnings explaining why a transaction is risky
+---
 
-Key Features
-Priority-Based Risk Detection
+## 🎯 **Key Features**
 
-Critical Risk (Score 0–20)
+### **Priority-Based Risk Detection**
 
-Unlimited ERC-20 approvals
+1. **🚨 CRITICAL (Score: 0-20)**
+   - Unlimited ERC-20 token approvals
+   - Full NFT collection approvals (`setApprovalForAll`)
+   - Known malicious contracts
+   - Simulated asset loss
 
-Full NFT collection approvals using setApprovalForAll
+2. **⚠️ CAUTION (Score: 40-70)**
+   - Limited token approvals
+   - Unverified contracts
+   - Unknown function calls
+   - Contract interactions with low trust scores
 
-Known malicious contracts
+3. **✅ SAFE (Score: 75-100)**
+   - Standard token transfers
+   - Verified contracts
+   - Normal wallet operations
 
-Simulated asset loss
+### **Smart Analysis Engine**
 
-Caution (Score 40–70)
+- **ABI Decoding** - Translates hex data into readable function calls
+- **Etherscan Integration** - Fetches contract verification status
+- **Trust Scoring** - Analyzes contract age, creator history, and patterns
+- **Execution vs Security Risk** - Separates "will fail" from "is dangerous"
 
-Limited token approvals
+---
 
-Unverified contracts
+## 🛠️ **Tech Stack**
 
-Unknown function calls
+### **Frontend**
+- **React 18** - UI Framework
+- **Vite** - Build tool & dev server
+- **Tailwind CSS** - Styling
+- **Lucide React** - Icons
 
-Low-trust contract interactions
+### **Web3**
+- **Ethers.js 6** - Blockchain interactions
+- **MetaMask** - Wallet integration
+- **Sepolia Testnet** - Safe testing environment
 
-Safe (Score 75–100)
+### **APIs & Services**
+- **Etherscan API** - Contract verification & ABI retrieval
+- **Alchemy** - Transaction simulation (optional)
+- **Tenderly** - Advanced simulation (optional)
 
-Standard token transfers
+### **Developer Tools**
+- **React Hot Toast** - Notifications
+- **Axios** - HTTP requests
+- **ESLint** - Code quality
 
-Verified contracts
+---
 
-Normal wallet operations
+## 📦 **Installation**
 
-Smart Analysis Engine
+### **Prerequisites**
 
-ABI decoding to convert hex data into readable function calls
+- Node.js 18+ 
+- npm or yarn
+- MetaMask browser extension
 
-Etherscan integration for contract verification and ABI fetching
-
-Trust scoring based on contract age, creator history, and patterns
-
-Separation of execution failure risk and security risk
-
-Tech Stack
-
-Frontend
-
-React 18
-
-Vite
-
-Tailwind CSS
-
-Lucide React
-
-Web3
-
-Ethers.js 6
-
-MetaMask
-
-Sepolia testnet
-
-APIs and Services
-
-Etherscan API
-
-Alchemy (optional, for simulation)
-
-Tenderly (optional, advanced simulation)
-
-Developer Tools
-
-React Hot Toast
-
-Axios
-
-ESLint
-
-Installation
-
-Prerequisites
-
-Node.js 18 or higher
-
-npm or yarn
-
-MetaMask browser extension
-
-Setup Steps
-
-git clone https://github.com/Karunanidhisharma16/SignSure.git
+### **Step-by-Step Setup**
+```bash
+# 1. Clone the repository
+git clone https://github.com/Karunanidhisharma16/safeguard-web3.git
 cd safeguard-web3
+
+# 2. Install dependencies
 npm install --legacy-peer-deps
+
+# 3. Install Tailwind CSS
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
+
+# 4. Create environment file
 cp .env.example .env
 
-
-Add the following to your .env file:
-
+# 5. Add your API keys to .env
 VITE_ETHERSCAN_API_KEY=your_etherscan_api_key
-VITE_ALCHEMY_API_KEY=your_alchemy_api_key
+VITE_ALCHEMY_API_KEY=your_alchemy_api_key (optional)
 VITE_NETWORK=sepolia
 
-
-Start the development server:
-
+# 6. Start development server
 npm run dev
+```
 
-Usage
+### **Get Free API Keys**
 
-Connect MetaMask to the Sepolia testnet
+- **Etherscan**: https://etherscan.io/apis (Required)
+- **Alchemy**: https://www.alchemy.com/ (Optional - for simulation)
 
-Enter transaction details or paste a contract address
+---
 
-Select transaction type (Approval, Transfer, or NFT)
+## 🚀 **Usage**
 
-Click Analyze Transaction
+1. **Connect MetaMask** to Sepolia testnet
+2. **Enter transaction details** or paste a contract address
+3. **Select transaction type** (Approval, Transfer, or NFT)
+4. **Click "Analyze Transaction"**
+5. **Review the risk analysis** with clear explanations
+6. **Decide** to proceed or cancel
 
-Review the risk analysis and explanation
+### **Example Test Cases**
 
-Decide whether to proceed or cancel
-
-Example Test Cases
-
-Critical Risk – Unlimited Approval
-
+#### **🚨 Critical Risk - Unlimited Approval**
+```
 Type: Token Approval
 Contract: 0xaA8E23Fb1079EA71e0a56F48a2aA51851D8433D0
 Spender: 0x0000000000000000000000000000000000000001
-Amount: Unlimited
+Amount: unlimited
 
-Result: Critical Risk, Score 10/100
+Result: CRITICAL RISK, Score 10/100
 
-Caution – Limited Approval
 
+#### **⚠️ Caution - Limited Approval**
+```
 Type: Token Approval
 Contract: 0xaA8E23Fb1079EA71e0a56F48a2aA51851D8433D0
 Spender: 0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD
 Amount: 100
 
-Result: Caution, Score 50/100
+Result: CAUTION, Score 50/100
+```
 
-Safe – Normal Transfer
-
+#### **✅ Safe - Normal Transfer**
+```
 Type: Token Transfer
 Contract: 0xaA8E23Fb1079EA71e0a56F48a2aA51851D8433D0
-Recipient: Self
+Recipient: (leave empty for self-transfer)
 Amount: 10
 
-Result: Safe, Score 85/100
-
-Testing
-
-Run tests:
-
-npm test
+Result: SAFE, Score 85/100
 
 
-Manual Testing Checklist
 
-Connect MetaMask wallet
+### **Manual Testing Checklist**
 
-Analyze unlimited approval
+- [ ] Connect MetaMask wallet
+- [ ] Analyze unlimited approval → Score 10
+- [ ] Analyze limited approval → Score 50
+- [ ] Analyze safe transfer → Score 85
+- [ ] Test with unverified contract
+- [ ] Test NFT approval detection
+- [ ] Verify back button works
+- [ ] Check all warnings display correctly
 
-Analyze limited approval
 
-Analyze safe transfer
 
-Test unverified contracts
+## 🤝 **Contributing**
 
-Test NFT approval detection
+Contributions are welcome! Please follow these steps:
 
-Verify back button navigation
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-Ensure all warnings render correctly
 
-Contributing
+## 🐛 **Known Issues**
 
-Fork the repository
+- Transaction simulation requires Alchemy/Tenderly API (optional)
+- Only supports Sepolia testnet (mainnet support coming soon)
+- Active Approvals tab shows demo data only
 
-Create a feature branch
 
-Commit your changes
 
-Push the branch
+## 🗺️ **Roadmap**
 
-Open a pull request
+- [ ] Mainnet support
+- [ ] Multi-chain support (Polygon, BSC, Arbitrum)
+- [ ] Browser extension
+- [ ] Real-time approval tracking
+- [ ] Advanced contract pattern detection
+- [ ] Integration with popular DeFi protocols
+- [ ] Mobile app
 
-Known Issues
 
-Transaction simulation requires Alchemy or Tenderly API
 
-Only Sepolia testnet is supported
+## 📜 **License**
 
-Active approvals tab uses demo data
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
 
-Author
+## 👨‍💻 **Author**
 
-Karunanidhi Sharma
-Portfolio: portfolio.logicryx.in
-GitHub: https://github.com/Karunanidhisharma16
+**Karunanidhi Sharma**
+- Portfolio: [portfolio.logicryx.in]
+- GitHub: (https://github.com/Karunanidhisharma16)
+- LinkedIn: (https://www.linkedin.com/in/karunanidhi-sharma-154465323)
 
-LinkedIn: [linkedin.com/in/yourname](https://www.linkedin.com/in/karunanidhi-sharma-154465323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 
-Disclaimer
 
-This tool is for educational purposes only. Always verify contract addresses and understand the risks before approving any blockchain transaction. The developers are not responsible for any loss of funds.
+
+##  **Acknowledgments**
+
+- Built for [Hackathon Name]
+- Inspired by the need to protect Web3 users from scams
+- Special thanks to the Ethereum community
+
+---
+
+## ⚠️ **Disclaimer**
+
+This tool is provided for educational purposes only. Always verify contract addresses and understand the risks before approving any blockchain transaction. The developers are not responsible for any loss of funds.
+
+---
+
+<div align="center">
+  <strong>⭐ Star this repo if it helped you! ⭐</strong>
+</div>
+```
